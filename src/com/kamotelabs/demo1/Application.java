@@ -2,6 +2,7 @@ package com.kamotelabs.demo1;
 
 import javax.swing.SwingUtilities;
 
+import com.kamotelabs.designpatterns.demo1.controller.Controller;
 import com.kamotelabs.designpatterns.demo1.model.Model;
 import com.kamotelabs.designpatterns.demo1.view.View;
 

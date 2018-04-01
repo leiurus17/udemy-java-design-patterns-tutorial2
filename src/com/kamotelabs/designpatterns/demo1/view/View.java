@@ -47,6 +47,15 @@ public class View extends JFrame implements ActionListener {
 
 		helloButton.addActionListener(this);
 		goodbyeButton.addActionListener(this);
+		
+		goodbyeButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				System.out.println("Sorry to see you go.");
+			}
+			
+		});
 
 		setSize(600, 500);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);

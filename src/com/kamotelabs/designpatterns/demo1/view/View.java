@@ -14,27 +14,39 @@ public class View extends JFrame implements ActionListener {
 
 	private Model model;
 	private JButton helloButton;
+	private JButton goodbyeButton;
 
 	public View(Model model) {
 		super("MVC Demo");
 
 		this.model = model;
 
-		helloButton = new JButton("Click Me!");
+		helloButton = new JButton("Hello!");
+		goodbyeButton = new JButton("Good bye!");
 
 		setLayout(new GridBagLayout());
 
 		GridBagConstraints gc = new GridBagConstraints();
 		gc.anchor = GridBagConstraints.CENTER;
-		gc.gridheight = 0;
-		gc.gridwidth = 0;
+		gc.gridx = 1;
+		gc.gridy = 1;
 		gc.weightx = 1;
 		gc.weighty = 1;
 		gc.fill = GridBagConstraints.NONE;
 
 		add(helloButton, gc);
+		
+		gc.anchor = GridBagConstraints.CENTER;
+		gc.gridx = 1;
+		gc.gridy = 2;
+		gc.weightx = 1;
+		gc.weighty = 1;
+		gc.fill = GridBagConstraints.NONE;
+		
+		add(goodbyeButton, gc);
 
 		helloButton.addActionListener(this);
+		goodbyeButton.addActionListener(this);
 
 		setSize(600, 500);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -42,8 +54,15 @@ public class View extends JFrame implements ActionListener {
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent arg0) {
-		System.out.println("Par!");
+	public void actionPerformed(ActionEvent e) {
+		
+		JButton source = (JButton)e.getSource();
+		
+		if(source == helloButton) {
+			System.out.println("Hello!");
+		} else if(source == goodbyeButton) {
+			System.out.println("Good bye!");
+		}
 	}
 
 }

@@ -18,8 +18,10 @@ public class App {
 	public static void main(String[] args) {
 	
 		Animal animal1 = AnimalFactory.createAnimal(AnimalFactory.CAT);
+		Dog animal2 = (Dog) AnimalFactory.createAnimal(AnimalFactory.DOG);
 		
 		animal1.speak();
+		animal2.eat();
 	}
 
 }

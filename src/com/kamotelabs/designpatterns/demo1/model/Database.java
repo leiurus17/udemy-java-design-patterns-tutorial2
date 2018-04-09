@@ -12,5 +12,16 @@ public class Database {
 	public static Database getInstance() {
 		return instance;
 	}
+	
+	
+	// lazy instantiation
+	private static Database instanceOld;
+	public static Database getInstanceOld() {
+		if(instanceOld == null) {
+			instanceOld = new Database();
+		}
+		
+		return instanceOld;
+	}
 
 }

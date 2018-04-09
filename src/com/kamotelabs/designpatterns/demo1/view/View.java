@@ -12,6 +12,7 @@ import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
+import com.kamotelabs.designpatterns.demo1.model.Database;
 import com.kamotelabs.designpatterns.demo1.model.Model;
 
 public class View extends JFrame implements ActionListener {
@@ -87,6 +88,9 @@ public class View extends JFrame implements ActionListener {
 		add(okButton, gc);
 		
 		okButton.addActionListener(this);
+		
+		// Database db = new Database();
+		Database db = Database.getInstance();
 		
 		setSize(600, 500);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);

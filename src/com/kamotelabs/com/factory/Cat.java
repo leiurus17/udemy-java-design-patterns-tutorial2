@@ -1,6 +1,6 @@
 package com.kamotelabs.com.factory;
 
-public class Cat implements Animal {
+public class Cat extends AbstractAnimal implements Animal {
 
 	@Override
 	public void speak() {

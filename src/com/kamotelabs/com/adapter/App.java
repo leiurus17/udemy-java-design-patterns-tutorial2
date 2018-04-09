@@ -4,9 +4,10 @@ public class App {
 
 	public static void main(String[] args) {
 
-		Logger logger = new Logger();
+		ConsoleLogWriter logWriter = new ConsoleLogWriter();
+		Logger logger = new Logger(logWriter);
 		
-		logger.write(text);
+		logger.write("Hello there!");
 	}
 
 }

@@ -16,7 +16,10 @@ package com.kamotelabs.com.factory;
 public class App {
 	
 	public static void main(String[] args) {
+	
+		Animal animal1 = AnimalFactory.createAnimal(AnimalFactory.CAT);
 		
+		animal1.speak();
 	}
 
 }

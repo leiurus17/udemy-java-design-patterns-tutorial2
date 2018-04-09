@@ -7,6 +7,8 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 
 import com.kamotelabs.designpatterns.demo1.model.Model;
 
@@ -15,6 +17,10 @@ public class View extends JFrame implements ActionListener {
 	private Model model;
 	private JButton helloButton;
 	private JButton goodbyeButton;
+	private JTextField nameField;
+	private JPasswordField passField;
+	
+	private LoginListener loginListener;
 
 	public View(Model model) {
 		super("MVC Demo");
@@ -72,6 +78,11 @@ public class View extends JFrame implements ActionListener {
 		} else if(source == goodbyeButton) {
 			System.out.println("Good bye!");
 		}
+	}
+
+	public void setLoginListener(LoginListener loginListener) {
+		this.loginListener = loginListener;
+		
 	}
 
 }

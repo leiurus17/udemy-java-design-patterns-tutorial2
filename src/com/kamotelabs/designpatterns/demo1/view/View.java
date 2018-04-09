@@ -2,11 +2,13 @@ package com.kamotelabs.designpatterns.demo1.view;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
@@ -17,6 +19,7 @@ public class View extends JFrame implements ActionListener {
 	private Model model;
 	private JButton helloButton;
 	private JButton goodbyeButton;
+	private JButton okButton;
 	private JTextField nameField;
 	private JPasswordField passField;
 	
@@ -27,42 +30,64 @@ public class View extends JFrame implements ActionListener {
 
 		this.model = model;
 
-		helloButton = new JButton("Hello!");
-		goodbyeButton = new JButton("Good bye!");
+		nameField = new JTextField(10);
+		passField = new JPasswordField(10);
+		okButton = new JButton("OK");
 
 		setLayout(new GridBagLayout());
 
 		GridBagConstraints gc = new GridBagConstraints();
-		gc.anchor = GridBagConstraints.CENTER;
-		gc.gridx = 1;
-		gc.gridy = 1;
-		gc.weightx = 1;
-		gc.weighty = 1;
-		gc.fill = GridBagConstraints.NONE;
-
-		add(helloButton, gc);
+		gc.anchor = GridBagConstraints.LAST_LINE_END;
+		gc.gridx=1;
+		gc.gridy=1;
+		gc.weightx=1;
+		gc.weighty=1;
+		gc.insets = new Insets(100, 0, 0, 10);
+		gc.fill=GridBagConstraints.NONE;
 		
-		gc.anchor = GridBagConstraints.CENTER;
-		gc.gridx = 1;
-		gc.gridy = 2;
-		gc.weightx = 1;
-		gc.weighty = 1;
-		gc.fill = GridBagConstraints.NONE;
+		add(new JLabel("Name: "), gc);
 		
-		add(goodbyeButton, gc);
-
-		helloButton.addActionListener(this);
-		goodbyeButton.addActionListener(this);
+		gc.anchor = GridBagConstraints.LAST_LINE_START;
+		gc.gridx=2;
+		gc.gridy=1;
+		gc.weightx=1;
+		gc.weighty=1;
+		gc.insets = new Insets(100, 0, 0, 0);
+		gc.fill=GridBagConstraints.NONE;
 		
-		goodbyeButton.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				System.out.println("Sorry to see you go.");
-			}
-			
-		});
-
+		add(nameField, gc);
+		
+		gc.anchor = GridBagConstraints.LINE_END;
+		gc.gridx=1;
+		gc.gridy=2;
+		gc.weightx=1;
+		gc.weighty=1;
+		gc.insets = new Insets(0, 0, 0, 10);
+		gc.fill=GridBagConstraints.NONE;
+		
+		add(new JLabel("Password: "), gc);
+		
+		gc.anchor = GridBagConstraints.LINE_START;
+		gc.gridx=2;
+		gc.gridy=2;
+		gc.weightx=1;
+		gc.weighty=1;
+		gc.insets = new Insets(0, 0, 0, 0);
+		gc.fill=GridBagConstraints.NONE;
+		
+		add(passField, gc);
+		
+		gc.anchor = GridBagConstraints.FIRST_LINE_START;
+		gc.gridx=2;
+		gc.gridy=3;
+		gc.weightx=1;
+		gc.weighty=100;
+		gc.fill=GridBagConstraints.NONE;
+		
+		add(okButton, gc);
+		
+		okButton.addActionListener(this);
+		
 		setSize(600, 500);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setVisible(true);

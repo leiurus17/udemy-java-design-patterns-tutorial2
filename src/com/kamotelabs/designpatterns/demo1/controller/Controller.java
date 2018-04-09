@@ -16,8 +16,7 @@ public class Controller implements LoginListener {
 
 	@Override
 	public void loginPerformed() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("Login event received.");
 	}
 	
 	

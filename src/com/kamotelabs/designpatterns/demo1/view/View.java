@@ -96,13 +96,10 @@ public class View extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
-		JButton source = (JButton)e.getSource();
+		String password = new String(passField.getPassword());
+		String name = nameField.getText();
 		
-		if(source == helloButton) {
-			System.out.println("Hello!");
-		} else if(source == goodbyeButton) {
-			System.out.println("Good bye!");
-		}
+		System.out.println(name + ": " + password);
 	}
 
 	public void setLoginListener(LoginListener loginListener) {
